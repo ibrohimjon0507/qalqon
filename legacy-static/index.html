@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZIYOLILAR — Buyuk arboblar portretlari</title>
+  <meta name="description" content="Buyuk davlat arboblari va ziyolilar portretlari, hikoyalari va onlayn kitobi. Har bir inson — bir tarix." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__mark">
+      <svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true">
+        <use href="#logo-mark"></use>
+      </svg>
+    </div>
+    <span class="preloader__text">ZIYOLILAR</span>
+  </div>
+
+  <!-- ============ SVG DEFS (logo) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Laurel wreath + ochiq kitob -->
+      <g id="logo-mark">
+        <path d="M50 20 C40 10 22 12 18 26 C14 40 26 52 38 54" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M24 24 q-7 3 -7 11 M26 33 q-7 2 -8 10 M31 42 q-6 3 -6 10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M50 20 C60 10 78 12 82 26 C86 40 74 52 62 54" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M76 24 q7 3 7 11 M74 33 q7 2 8 10 M69 42 q6 3 6 10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <!-- ochiq kitob -->
+        <path d="M50 42 C44 38 36 38 31 40 L31 62 C36 60 44 60 50 64 C56 60 64 60 69 62 L69 40 C64 38 56 38 50 42 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M50 42 L50 64" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="brand" aria-label="ZIYOLILAR bosh sahifa">
+        <svg class="brand__mark" viewBox="0 0 100 100" width="40" height="40" aria-hidden="true"><use href="#logo-mark"></use></svg>
+        <span class="brand__text">
+          <strong>ZIYOLILAR</strong>
+          <em>Buyuk arboblar portretlari</em>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#about">Biz haqimizda</a>
+        <a href="#figures">Arboblar</a>
+        <a href="#book">Kitob</a>
+        <a href="#stories">Hikoyalar</a>
+        <a href="#contact">Aloqa</a>
+      </nav>
+
+      <button class="nav__cta" data-open-book>Kitobni ochish</button>
+      <button class="nav__burger" id="burger" aria-label="Menyu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero" id="home">
+    <canvas class="hero__mosaic" id="mosaic" aria-hidden="true"></canvas>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__slides" id="heroSlides">
+      <article class="hero__slide is-active">
+        <p class="hero__eyebrow">Har bir inson — bir tarix</p>
+        <h1 class="hero__title">Buyuk arboblar<br/>portretlari</h1>
+        <p class="hero__lead">Davlat arboblari, mutafakkirlar va ziyolilarning hayoti, merosi va hikoyalari — yagona nafis to‘plamda.</p>
+        <div class="hero__actions">
+          <a href="#figures" class="btn btn--gold">Arboblarni ko‘rish</a>
+          <button class="btn btn--ghost" data-open-book>📖 Onlayn kitob</button>
+        </div>
+      </article>
+
+      <article class="hero__slide">
+        <p class="hero__eyebrow">Ilm va davlatchilik</p>
+        <h1 class="hero__title">Ajdodlar<br/>merosi</h1>
+        <p class="hero__lead">Samarqanddan Bag‘dodgacha — jahon tsivilizatsiyasiga hissa qo‘shgan siymolar galereyasi.</p>
+        <div class="hero__actions">
+          <a href="#about" class="btn btn--gold">Loyiha haqida</a>
+        </div>
+      </article>
+
+      <article class="hero__slide">
+        <p class="hero__eyebrow">Avlodlarga ko‘prik</p>
+        <h1 class="hero__title">Jonli<br/>tarix</h1>
+        <p class="hero__lead">Har bir portret ortida — jasorat, ilm va fidoyilik hikoyasi. Ularni varaqlab o‘qing.</p>
+        <div class="hero__actions">
+          <button class="btn btn--gold" data-open-book>Kitobni varaqlash</button>
+        </div>
+      </article>
+    </div>
+
+    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Oldingi">&#8249;</button>
+    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Keyingi">&#8250;</button>
+    <div class="hero__dots" id="heroDots"></div>
+
+    <a href="#stats" class="hero__scroll" aria-label="Pastga">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats" id="stats">
+    <div class="stats__grid" id="statsGrid"></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about__media">
+      <div class="about__frame">
+        <canvas id="aboutMosaic" aria-hidden="true"></canvas>
+        <div class="about__portrait" id="aboutPortrait"></div>
+      </div>
+      <span class="about__badge">Celebrating heritage</span>
+    </div>
+    <div class="about__text">
+      <p class="section__eyebrow">Biz haqimizda</p>
+      <h2 class="section__title">Har bir portret —<br/>bir hikoya aytadi</h2>
+      <p>ZIYOLILAR — tarixda o‘chmas iz qoldirgan davlat arboblari, mutafakkirlar va ziyolilarni yagona raqamli galereyada jamlaydigan madaniy loyiha. Biz ularning portretlari, hayot yo‘li va merosini zamonaviy, nafis shaklda avlodlarga yetkazamiz.</p>
+      <p>Maqsadimiz — oddiy va tushunarli badiiy til orqali tarixni interaktiv hikoyaga aylantirish. Bu yerda tarix shunchaki o‘qilmaydi — u varaqlanadi, his qilinadi.</p>
+      <div class="about__socials">
+        <a href="#" aria-label="Instagram" class="soc">◎</a>
+        <a href="#" aria-label="Telegram" class="soc">✈</a>
+        <a href="#" aria-label="YouTube" class="soc">▷</a>
+        <a href="#" aria-label="Facebook" class="soc">f</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FIGURES GRID ============ -->
+  <section class="figures" id="figures">
+    <div class="section__head">
+      <p class="section__eyebrow">Galereya</p>
+      <h2 class="section__title">Buyuk arboblar</h2>
+      <p class="section__sub">Portret ustiga bosib, to‘liq hikoyani o‘qing.</p>
+    </div>
+    <div class="figures__grid" id="figuresGrid"></div>
+  </section>
+
+  <!-- ============ BOOK ============ -->
+  <section class="bookcta" id="book">
+    <div class="bookcta__text">
+      <p class="section__eyebrow section__eyebrow--light">Onlayn kitob</p>
+      <h2 class="section__title section__title--light">Tarixni<br/>varaqlab o‘qing</h2>
+      <p>Barcha arboblar hikoyasi — chiroyli, sahifalari varaqlanadigan onlayn kitobda. Haqiqiy kitob kabi, lekin bir marta bosish bilan.</p>
+      <button class="btn btn--gold" data-open-book>📖 Kitobni ochish</button>
+    </div>
+    <div class="bookcta__visual" data-open-book role="button" tabindex="0" aria-label="Kitobni ochish">
+      <div class="book3d">
+        <div class="book3d__cover">
+          <svg viewBox="0 0 100 100" width="58" height="58" aria-hidden="true"><use href="#logo-mark"></use></svg>
+          <span class="book3d__title">ZIYOLILAR</span>
+          <span class="book3d__sub">Buyuk arboblar kitobi</span>
+          <span class="book3d__hint">Ochish uchun bosing</span>
+        </div>
+        <div class="book3d__pages"></div>
+        <div class="book3d__spine"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="tst" id="tst">
+    <div class="section__head">
+      <p class="section__eyebrow">E’tiroflar</p>
+      <h2 class="section__title">Hamkorlar fikri</h2>
+    </div>
+    <div class="tst__viewport">
+      <button class="tst__arrow tst__arrow--prev" id="tstPrev" aria-label="Oldingi">&#8249;</button>
+      <div class="tst__track" id="tstTrack"></div>
+      <button class="tst__arrow tst__arrow--next" id="tstNext" aria-label="Keyingi">&#8250;</button>
+    </div>
+    <div class="tst__dots" id="tstDots"></div>
+  </section>
+
+  <!-- ============ STORIES ============ -->
+  <section class="stories" id="stories">
+    <div class="stories__intro">
+      <p class="section__eyebrow">So‘nggi hikoyalar</p>
+      <h2 class="section__title">Jasorat, ilm va fidoyilik</h2>
+      <p class="section__sub">Bu hikoyalar — mardlik, ma’rifat va el-yurtga sadoqat haqida. Boshqalarini galereyada ko‘ring.</p>
+    </div>
+    <div class="stories__grid" id="storiesGrid"></div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact__find">
+      <h2 class="section__title">Biz bilan bog‘laning</h2>
+      <div class="contact__block">
+        <h3>Manzil</h3>
+        <p>Toshkent shahri, O‘zbekiston</p>
+      </div>
+      <div class="contact__block">
+        <h3>Aloqa</h3>
+        <p>info@ziyolilar.uz<br/>+998 (00) 000-00-00</p>
+      </div>
+      <div class="contact__block">
+        <h3>Ijtimoiy tarmoqlar</h3>
+        <div class="about__socials">
+          <a href="#" aria-label="Instagram" class="soc soc--dark">◎</a>
+          <a href="#" aria-label="Telegram" class="soc soc--dark">✈</a>
+          <a href="#" aria-label="YouTube" class="soc soc--dark">▷</a>
+          <a href="#" aria-label="Facebook" class="soc soc--dark">f</a>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact__form" id="contactForm" novalidate>
+      <h2 class="section__title">Xabar yuboring</h2>
+      <div class="field-row">
+        <label class="field">
+          <span>Ism <b>*</b></span>
+          <input type="text" name="name" required placeholder="Ismingiz" />
+        </label>
+        <label class="field">
+          <span>Email <b>*</b></span>
+          <input type="email" name="email" required placeholder="email@misol.uz" />
+        </label>
+      </div>
+      <label class="field">
+        <span>Mavzu <b>*</b></span>
+        <input type="text" name="subject" required placeholder="Mavzu" />
+      </label>
+      <label class="field">
+        <span>Xabar <b>*</b></span>
+        <textarea name="message" rows="5" required placeholder="Xabaringiz..."></textarea>
+      </label>
+      <button type="submit" class="btn btn--dark">Yuborish</button>
+      <p class="contact__note" id="formNote" hidden>Rahmat! Xabaringiz qabul qilindi. ✓</p>
+    </form>
+  </section>
+
+  <!-- ============ NEWSLETTER + FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__news">
+      <h2>Hamjamiyatga qo‘shiling</h2>
+      <p>Yangi arboblar va hikoyalardan birinchilardan bo‘lib xabardor bo‘ling.</p>
+      <form class="footer__form" id="newsForm">
+        <input type="email" placeholder="Email manzilingiz" aria-label="Email" required />
+        <button class="btn btn--gold" type="submit">Yuborish</button>
+      </form>
+      <p class="footer__thanks" id="newsThanks" hidden>Obuna bo‘lganingiz uchun rahmat! ✓</p>
+    </div>
+    <div class="footer__bar">
+      <a href="#home" class="brand brand--footer">
+        <svg class="brand__mark" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><use href="#logo-mark"></use></svg>
+        <strong>ZIYOLILAR</strong>
+      </a>
+      <p>© <span id="year"></span> ZIYOLILAR. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FIGURE MODAL ============ -->
+  <div class="modal" id="figureModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__card" role="document">
+      <button class="modal__close" data-close-modal aria-label="Yopish">&times;</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============ BOOK OVERLAY ============ -->
+  <div class="bookviewer" id="bookViewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Onlayn kitob">
+    <div class="bookviewer__backdrop" data-close-book></div>
+    <button class="bookviewer__close" data-close-book aria-label="Yopish">&times;</button>
+    <div class="bookviewer__stage">
+      <button class="bookviewer__nav bookviewer__nav--prev" id="bookPrev" aria-label="Oldingi sahifa">&#8249;</button>
+      <div class="flipbook" id="flipbook" aria-live="polite"></div>
+      <button class="bookviewer__nav bookviewer__nav--next" id="bookNext" aria-label="Keyingi sahifa">&#8250;</button>
+    </div>
+    <div class="bookviewer__meta">
+      <span id="bookPageInfo">1 / 1</span>
+    </div>
+  </div>
+
+  <button class="totop" id="toTop" aria-label="Yuqoriga">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/book.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
